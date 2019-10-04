@@ -2,10 +2,12 @@ package com.stackroute.domain;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class AppConfig {
-    @Bean(name="movie1")
+    @Scope("prototype")
+    @Bean(name={"movie1","movie2"})
     public Movie getMovie()
     {
         return new Movie();
