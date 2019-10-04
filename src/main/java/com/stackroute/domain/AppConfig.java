@@ -10,15 +10,13 @@ public class AppConfig {
     @Bean(name={"movie1","movie2"})
     public Movie getMovie()
     {
-        return new Movie();
+        return new Movie(setActor());
     }
     @Bean(name="actor1")
     public Actor setActor()
     {
-        Actor actor = new Actor();
-        actor.setAge(30);
-        actor.setName("Ranbir Kapoor");
-        actor.setGender("male");
+        Actor actor = new Actor("Ranbir Kapoor","male",30);
+
         return actor;
     }
 }
