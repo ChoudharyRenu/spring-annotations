@@ -1,12 +1,21 @@
 package com.stackroute;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import com.stackroute.domain.Actor;
+import com.stackroute.domain.Movie;
+import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan(basePackages = "com.stackroute.domain")
 public class AppConfig {
+    @Bean
+    public Actor actor() {
+
+        return new Actor("Ranbir", "male", 32);
+    }
+
+
+    @Bean("moviex")
+    public Movie movie() {
+        return new Movie(actor());
+    }
 
 }

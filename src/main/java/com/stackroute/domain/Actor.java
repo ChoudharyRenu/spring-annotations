@@ -6,12 +6,19 @@ import org.springframework.stereotype.Component;
 @Component("actor")
 public class Actor {
 
-    @Value("Ranbir Kapoor")
     private String name;
-    @Value("male")
     private String gender;
-    @Value("30")
     private int age;
+
+    public Actor() {
+    }
+
+    public Actor(String name, String gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }
@@ -25,6 +32,12 @@ public class Actor {
 
     public int getAge() {
         return age;
+    }
+    @Override
+    public String toString() {
+        return "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age ;
     }
 
 }
